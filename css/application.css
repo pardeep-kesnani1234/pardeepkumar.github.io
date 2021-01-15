@@ -1,0 +1,72 @@
+body{
+ overflow: hidden;
+}
+
+#needleLine {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.5em;
+    font-weight: bold; 
+}
+
+canvas#myChart {
+    width: 100% !important;
+    height: auto !important;
+    }
+
+#title{
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.5em;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.square1 {
+  height: 20px;
+  width: 20px;
+  background-color: rgb(53, 119, 150);
+}
+
+.square2 {
+  height: 20px;
+  width: 20px;
+  background-color: rgb(89, 148, 50) ;
+  }
+
+.legendText{
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1em;
+  }
+
+.leftAlign{
+  text-align: left;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1em;
+  }
+
+.boldFont{
+  font-weight: bold;
+  }
+
+.showHideTitle{
+  display: inline;
+}  
+.showHideLegend{
+  display: none;
+}
+
+.noselect {
+  cursor: default;
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+      -khtml-user-select: none; /* Konqueror HTML */
+        -moz-user-select: none; /* Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome and Opera */
+  }
+
+ 

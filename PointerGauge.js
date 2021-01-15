@@ -103,7 +103,7 @@
             gauge.redraw(value, 5000, "%");
 			
         }
-
+	
     function loadSummaryData(worksheetName) {
         // Get the worksheet object we want to get the selected marks for
         const worksheet = getSelectedSheet(worksheetName);
@@ -121,12 +121,42 @@
             //populateDataTable(data, columns);
             //document.write("I was here..");
 			var value = SummaryData.data[0][0].value //get 1st measure value from connected sheet (POINTER VALUE)
-			populatePointerGauge(SummaryData,"Tableau");
+			populatePointerGauge(value,"Tableau");
+			populateLiquidGauge(SummaryData)
 			
         });
     }
 	
-	
+    function populateLiquidGauge(SummaryData) {
+        // Do some UI setup here to change the visible section and reinitialize the table
+        $('#fillgauge').empty();
+
+        if (SummaryData.data.length > 0) {
+
+            var value = SummaryData.data[0][0].value //get meaure value from Summary Data
+            var config = liquidFillGaugeDefaultSettings();
+            config.circleThickness = 0.15;
+            config.circleColor = "#c71414";
+            config.textColor = "#c71414";
+            config.waveTextColor = "#00ffff";
+            config.waveColor = "#c71414";
+            config.textVertPosition = 0.5;
+            config.waveAnimateTime = 1000;
+            config.waveHeight = 0.05;
+            config.waveAnimate = true;
+            config.waveRise = true;
+            config.waveHeightScaling = false;
+            config.waveOffset = 0.25;
+            config.textSize = 0.75;
+            config.waveCount = 3;
+            var gauge = loadLiquidFillGauge("fillgauge", value * 100, config);
+
+
+        } else {
+            // If we didn't get any rows back, there must be no marks selected
+            $('#no_data_message').css('display', 'inline');
+        }
+    }		
     function NewValue() {
         if (Math.random() > .5) {
             return Math.round(Math.random() * 100);

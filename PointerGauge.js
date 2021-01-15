@@ -54,7 +54,7 @@
                 // Close the dialog and show the data table for this worksheet
                 tableau.extensions.settings.saveAsync().then((newSavedSettings) => {
                     loadSummaryData(worksheetName);
-					$('#choose_sheet_dialog').modal('toggle');
+					//$('#choose_sheet_dialog').modal('toggle');
                 });
             });
 

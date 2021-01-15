@@ -108,9 +108,9 @@
         // Get the worksheet object we want to get the selected marks for
         const worksheet = getSelectedSheet(worksheetName);
         // Set our title to an appropriate value
-        //$('#user_prompts').remove();
-        $('#show_choose_sheet_button').remove();
-		$('#choose_sheet_dialog').remove();
+        $('#user_prompts').remove();
+        //$('#show_choose_sheet_button').remove();
+	//	$('#choose_sheet_dialog').remove();
 
         // Call to get the summaryData for our sheet
         worksheet.getSummaryDataAsync().then(function(SummaryData) {

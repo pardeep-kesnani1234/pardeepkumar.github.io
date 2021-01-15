@@ -113,7 +113,7 @@
         // Set our title to an appropriate value
         $('#user_prompts').remove();
         $('#show_choose_sheet_button').remove();
-		$('#choose_sheet_dialog').remove();
+		
 
         // Call to get the summaryData for our sheet
         worksheet.getSummaryDataAsync().then(function(SummaryData) {
@@ -124,9 +124,9 @@
             //populateDataTable(data, columns);
             //document.write("I was here..");
 			var value = SummaryData.data[0][0].value //get 1st measure value from connected sheet (POINTER VALUE)
-			populatePointerGauge(value,"Tableau");
+			//populatePointerGauge(value,"Tableau");
 			populateLiquidGauge(SummaryData)
-			
+			$('#choose_sheet_dialog').remove();
         });
     }
 	

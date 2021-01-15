@@ -1,0 +1,14 @@
+{
+  "name": "gaugechart",
+  "version": "0.5.0",
+  "description": "TableuExtGauge",
+  "main": "index.js",
+  "repository": "https://github.com/gabouka/Tableau-Extension---Gauge-Chart",
+  "author": "Gabor Kubler",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "jquery": "^3.3.1",
+    "numeral": "^2.0.6"
+  }
+}

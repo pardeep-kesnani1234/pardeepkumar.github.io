@@ -1,0 +1,135 @@
+<html>
+<head>
+    <!-- CSS stylesheets -->
+    <link rel="stylesheet" type="text/css" href="libs/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/applicationDialog.css">
+    <!-- Javascript Files -->
+    <script type="text/javascript" src="libs/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/tableau-extensions-1.1.0.min.js"></script>
+    <!-- for IE color picker support -->
+    <script type="text/javascript" src="js/color-polyfill.js"></script> 
+    <script type="text/javascript" src="js/dialog.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="page-header">
+            <h1>Gauge Chart Configuration</h1>
+        </div>
+        <div class="row">
+                <button class="btn" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                        <h5><span class="badge badge-secondary">Usage Instructions</span></h5>
+                      </button>
+                    </p>
+                    <div class="collapse" id="collapseExample">
+                      <div class="card card-body">
+                            <h6>Create a Worksheet with Measure Values in Columns and Measure Names in Rows and place it on the dashboard. The order of the measure values is important. 1st is your "needle" value, 2nd is your "budget" slice and 3rd is your total. <br>Once the worksheet has been set up for Category choose Measure Names and Measure Values for the rest of the dropdowns.<br><strong>Reload the visual after saving it!</strong></h6>                      </div>
+                    </div>
+        </div>
+        <div class="row">
+                <div class="col-md-6 col-xs-6">
+                    <span class="dropdown-label">Worksheet Data Source</span>
+                    <select id="selectWorksheet" class="select">
+                        <option disabled selected="selected">-- None Selected --</option>
+                    </select>
+                  </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 col-xs-6">
+              <span class="dropdown-label">Category
+              <select id="selectCategory" class="select">
+                  <option disabled selected="selected">-- None Selected --</option>
+              </select></span>
+          </div>
+        </div>
+        <div class="accordion" id="accordionExample">
+          <div class="card">
+            <div class="card-header" id="headingThree">
+              <h2 class="mb-0">
+                <button class="btn btn-primary btn-lg btn-block" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  &#9868;  Title and Legend
+                </button>
+              </h2>
+            </div>
+        
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+              <div class="card-body">
+                <div class="col-md-6 col-xs-6">
+                  <p>Title: <input type="text" id="titleName" value="Gauge Chart">
+                  <select id="titleShow" class="smallField" >
+                    <option value="show" selected="selected">Show</option>
+                    <option value="hide" >Hide</option>
+                  </select></p>
+                  <p>Legend:
+                    <select id="legendShow" class="smallField" >
+                      <option value="show" selected="selected">Show</option>
+                      <option value="hide">Hide</option>
+                    </select>
+                  </p>
+                  <p>Prefix for measures: <input type="text" id="prefix" class="smallField" value="$" maxlength="4" ></p>
+              </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      
+        <div class="card">
+            <div class="card-header" id="headingTwo">
+              <h2 class="mb-0">
+                <button class="btn btn-primary btn-lg btn-block" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  &#9779; Measure Options
+                </button>
+              </h2>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+              <div class="card-body">
+                    <div class="col-md-6 col-xs-6">
+                            <p><span class="dropdown-label">Value 1</span>
+                            <select id="selectTotal" class="select">
+                                <option disabled selected="selected">-- None Selected --</option>
+                            </select> 
+                            <span id="selectColor1">Color 1: <input type="color" id="selectColor1Container" value="#898989"></span></p>
+                    </div>
+                    <div class="col-md-6 col-xs-6">
+                            <p><span class="dropdown-label">Value 2</span>
+                            <select id="selectBudget" class="select">
+                                <option disabled selected="selected">-- None Selected --</option>
+                            </select>
+                            <span id="selectColor2">Color 2: <input type="color" id="selectColor2Container" value="#dcf442"></span></p>
+                        </div>
+                    </div>
+              </div>
+            </div>
+        
+
+        <div class="accordion" id="accordionExample">
+            <div class="card">
+              <div class="card-header" id="headingOne">
+                <h2 class="mb-0">
+                  <button class="btn btn-primary btn-lg btn-block" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    &#10992; Needle Options
+                  </button>
+                </h2>
+              </div>
+          
+              <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="card-body">
+                    <div class="col-md-6 col-xs-6">
+                        <p><span class="dropdown-label">Needle Value </span>
+                        <select id="selectCurrent" class="select">
+                            <option disabled selected="selected">-- None Selected --</option>
+                        </select>
+                        <span id="selectColor3">Needle Color : <input type="color" id="selectColor3Container" value="#53f441"></span></p>
+                    </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="row dialog-buttons">
+            <span id="error"></span>
+            <button id="save" class="btn btn-success">Save</button>
+            <button id="cancel" class="btn btn-danger">Cancel</button>
+        </div>
+    </div>
+</body>
+</html>

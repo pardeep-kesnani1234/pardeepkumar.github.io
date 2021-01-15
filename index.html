@@ -1,1 +1,32 @@
-echo "Hello World"
+<html>
+    <head>
+        <!-- Css files -->
+        <link rel="stylesheet" type="text/css" href="libs/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/application.css">
+        
+        <!-- Javascript files -->
+        <!-- bootstrap and jQuery -->
+        <script type="text/javascript" src="libs/jquery/dist/jquery.min.js"></script>
+        <script type="text/javascript" src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
+        <!-- tableau extension js -->
+        <script type="text/javascript" src="js/tableau-extensions-1.1.0.min.js"></script>
+        <!-- Numeral JS number format -->
+        <script type="text/javascript" src="libs/numeral/min/numeral.min.js"></script>
+        <!-- Gauge JS -->
+        <script type="text/javascript" src="js/gauge.min.js"></script>  
+        <!-- Application configuration -->
+        <script type="text/javascript" src="js/application.js"></script>    
+    </head>
+    <body>
+        <div style="display:flex;justify-content:center;align-items:center;">
+            <div id= "title" class="boldFont showHideTitle noselect" >Select Configure then reload</div>
+        </div>
+        <!-- Displays chart -->
+        <canvas id="myChart" class="noselect"></canvas>
+        <!-- Displays Current Value -->
+        <div id="needleLine" class="noselect"></div>  
+        <!-- Displays legend -->
+        <h6 id="legend" class="showHideLegend noselect"></h6>       
+    </body>
+ 
+</html>

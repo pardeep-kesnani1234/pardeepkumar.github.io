@@ -74,35 +74,38 @@
 
         return button;
     }
-	
-	function populatePointerGauge(value, label, min = 0, max = 100) {
-            this.value=value;
-			var range = max - min;
-            var config = {
-                size: 20,
-                label: label,
-                min: undefined != min ? min : 0,
-                max: undefined != max ? max : 100,
-                minorTicks: 5,
-                greenZones: {
-                    from: 0,
-                    to: min + range * 0.75
-                },
-                yellowZones: {
-                    from: min + range * 0.75,
-                    to: min + range * 0.9
-                },
-                redZones: {
-                    from: min + range * 0.9,
-                    to: max
-                }
+   
+    function populateLiquidGauge(SummaryData) {
+        // Do some UI setup here to change the visible section and reinitialize the table
+        $('#fillgauge').empty();
 
-          }
-            gauge = new Gauge("fillgauge", config);
-            gauge.render();
-            gauge.redraw(value, 5000, "%");
-			
+        if (SummaryData.data.length > 0) {
+
+            var value = SummaryData.data[0][0].value //get meaure value from Summary Data
+            var config = liquidFillGaugeDefaultSettings();
+            config.circleThickness = 0.15;
+            config.circleColor = "#c71414";
+            config.textColor = "#c71414";
+            config.waveTextColor = "#00ffff";
+            config.waveColor = "#c71414";
+            config.textVertPosition = 0.5;
+            config.waveAnimateTime = 1000;
+            config.waveHeight = 0.05;
+            config.waveAnimate = true;
+            config.waveRise = true;
+            config.waveHeightScaling = false;
+            config.waveOffset = 0.25;
+            config.textSize = 0.75;
+            config.waveCount = 3;
+            var gauge = loadLiquidFillGauge("fillgauge", value * 100, config);
+
+
+        } else {
+            // If we didn't get any rows back, there must be no marks selected
+            $('#no_data_message').css('display', 'inline');
         }
+    }	
+  	
 	
     function loadSummaryData(worksheetName) {
         // Get the worksheet object we want to get the selected marks for

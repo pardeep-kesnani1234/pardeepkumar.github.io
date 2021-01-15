@@ -119,7 +119,7 @@
 
             // Populate the data table with the rows and columns we just pulled out
             //populateDataTable(data, columns);
-            document.write("I was here..");
+            //document.write("I was here..");
 			var value = SummaryData.data[0][0].value //get 1st measure value from connected sheet (POINTER VALUE)
 			populatePointerGauge(value,"Tableau");
 			
@@ -139,7 +139,7 @@
     function filterChangedHandler(filterEvent) {
         // Just reconstruct the filters table whenever a filter changes.
         // This could be optimized to add/remove only the different filters.
-        fetchFilters();
+        //fetchFilters();
         //reload gauge
         const worksheetName = tableau.extensions.settings.get('selWorksheet');
         loadSummaryData(worksheetName);

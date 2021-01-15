@@ -109,7 +109,7 @@
         const worksheet = getSelectedSheet(worksheetName);
         // Set our title to an appropriate value
         $('#user_prompts').remove();
-        //$('#show_choose_sheet_button').remove();
+        $('#show_choose_sheet_button').remove();
 		$('#choose_sheet_dialog').remove();
 
         // Call to get the summaryData for our sheet
@@ -139,7 +139,7 @@
     function filterChangedHandler(filterEvent) {
         // Just reconstruct the filters table whenever a filter changes.
         // This could be optimized to add/remove only the different filters.
-        //fetchFilters();
+        fetchFilters();
         //reload gauge
         const worksheetName = tableau.extensions.settings.get('selWorksheet');
         loadSummaryData(worksheetName);

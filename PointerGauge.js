@@ -13,7 +13,7 @@
             const worksheetName = tableau.extensions.settings.get('selWorksheet');
             if (worksheetName) {
                 loadSummaryData(worksheetName);
-		document.write("I was here..");
+		 $('#user_prompts_title').text("Configure Extension...");
 		
             } else {
                 $('#user_prompts_title').text("Configure Extension...");

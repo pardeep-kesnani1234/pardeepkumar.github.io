@@ -107,9 +107,8 @@
     function loadSummaryData(worksheetName) {
         // Get the worksheet object we want to get the selected marks for
         const worksheet = getSelectedSheet(worksheetName);
-	$('#user_prompts_title').text("I m here");
         // Set our title to an appropriate value
-        $('#user_prompts').remove();
+        //$('#user_prompts').remove();
         $('#show_choose_sheet_button').remove();
 		$('#choose_sheet_dialog').remove();
 
